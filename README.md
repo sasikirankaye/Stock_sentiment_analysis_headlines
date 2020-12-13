@@ -10,3 +10,17 @@ Performed by the Fundamental Analysts, this method is concerned more with the co
 
 Technical Analysis:
 Performed by the Technical Analysts, this method deals with the determination of the stock price based on the past patterns of the stock (using time-series analysis.
+
+Pre Processing
+Text data is unstructured data. So, we cannot provide raw test data to classifier as an input. Firstly, we need to tokenize the document into words to operate on word level. Text data contains more noisy words which are not contributing towards classification. So, we need to drop those words. In addition, text data may contain numbers, more white spaces, tabs, punctuation characters, stop words etc. We also need to clean data by removing all those words. 2.3 Sentiment Detection Algorithm For automatic sentiment detection of news articles, we are following Dictionary based approach which uses Bag of Word technique for text mining. This method is based on the research of J. Bean in his implementation of Twitter sentiment analysis for airline companies. To build the polarity dictionary, we need two types of words collection; i.e. positive words and negative words. Then we can match the article’s words against both these words list and count numbers of words appears in both the dictionaries and calculate the score of that document. We created the polarity words dictionary using general words with positive and negative polarity.
+
+Algorithm:
+Tokenize the document into word vector.
+Prepare the dictionary which contains words with its polarity (positive or negative)
+Check against each word weather it matches with one of the word from positive word dictionary or negative words dictionary.
+Count number of words belongs to positive and negative polarity.
+If the Score is 0 or more, we consider the document is positive or else, negative.
+ 
+
+Classifier Learning
+As most of the research shows that  Random Forest and Naïve Bayes classification algorithms performs good in text classification. So, we are considering all three algorithms to classify the text and check each algorithm’s accuracy. We can compare all the results such as accuracy, precision, recall and other model evaluation methods. All three classification algorithms are implemented and tested using Weka tool.
